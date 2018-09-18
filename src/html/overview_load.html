@@ -1,0 +1,32 @@
+<template>
+    <section class="section" id="section-overview-load">
+        <div class="section-contents">
+            <div class="div-title">
+                <h2 class="title">Open a wallet</h2>
+            </div>
+            <div class="div-input">
+                <div class="input-wrap">
+                    <h4 class="text-spaced">Select the wallet file:</h4>
+                    <input data-initial="recentWallet" type="text" class="text-block path-input" id="input-load-path" style="padding: 12px 8px;" tabindex="1"></input>
+                    <button data-selection="openFile" data-targetinput="input-load-path" type="button" class="button-green path-input-button" id="button-load-browse" tabindex="2"><i class="fas fa-folder-open"></i></button>
+                </div>
+
+                <div class="input-wrap">
+                    <h4 class="text-spaced">Wallet password:</h4>
+                    <input tabindex="3" type="password" class="text-block" id="input-load-password" style="padding: 12px 8px;"></input>
+                </div>
+                
+                <div class="input-wrap">
+                    <span class="form-ew text-spaced-error" id="text-load-error"></span>
+                    <span class="form-ew text-spaced-warning" id="text-load-warning"></span>
+                    <span class="form-ew text-spaced-success" id="text-load-success"></span>
+                </div>
+
+                <div class="input-wrap button-wrap">
+                    <button tabindex="5" type="button" class="form-bt button-green" id="button-load-load">Open</button>
+                    <button tabindex="6" type="button" class="form-bt button-red" data-section="section-welcome" id="button-load-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,33 @@
+<template>
+    <section class="section" id="section-transactions">
+        <div class="section-contents">
+            <div class="div-title"><h2 class="title">Transactions</h2></div>
+            <div  id="transaction-lists" class="list-tables">
+                <div class="tx-tools">
+                    <div class="tx-search">
+                    <input id="tx-search" class="text-block search" placeholder="Search by anything..." />
+                    </div>
+                    <div class="tx-sort">
+                        Sort by:
+                        <span class="csort" data-dir="0" id="txSortAmount">Amount</span>
+                        <span class="csort" data-dir="0" id="txSortTime">Date</span>
+                    </div>
+                </div>
+                <!-- <progress class="light block-progress-extra"></progress> -->
+                <div class="transaction-table-wrapper">
+                    <table class="custom-table transaction-list-table" id="transaction-list-table">
+                        <tbody class="list">
+                            <tr id="txfiller">
+                                <td colspan="2" class="text-center">No transactions found, yet -:(.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="pagination"></ul>
+            </div>
+            <div class="input-wrap button-wrap" style="padding: 0;margin-top: 1rem;">
+                <button type="button" class="hidden button-green small" id="button-transactions-refresh">Refresh</button>
+            </div>
+        </div>
+    </section>
+</template>
