@@ -124,8 +124,8 @@ function updateBalance(data){
     if(!data || !data.availableBalance) return;
     if(data.availableBalance <= 0) return;
 
-    let bUnlocked = (data.availableBalance / 100).toFixed(2);
-    let bLocked = (data.lockedAmount / 100).toFixed(2);
+    let bUnlocked = (data.availableBalance / 1000000).toFixed(2); //100
+    let bLocked = (data.lockedAmount / 1000000).toFixed(2); //100
     balanceAvailableField.innerHTML = bUnlocked;
     balanceLockedField.innerHTML = bLocked;
     let walletFile = require('path').basename(settings.get('recentWallet'));
@@ -143,9 +143,9 @@ function updateTransactions(result){
     Array.from(blockItems).forEach((block) => {
         block.transactions.map((tx, index) => {
             if(tx.amount !== 0 && !gutils.objInArray(txlistExisting, tx, 'transactionHash')){
-                tx.amount = (tx.amount/100).toFixed(2);
+                tx.amount = (tx.amount/1000000).toFixed(2); //100
                 tx.timeStr = tx.timeStr = new Date(tx.timestamp * 1000).toDateString();
-                tx.fee = (tx.fee/100).toFixed(2);
+                tx.fee = (tx.fee/1000000).toFixed(2); //100
                 tx.paymentId = tx.paymentId.length ? tx.paymentId : '-';
                 tx.txType = (tx.amount > 0 ? 'in' : 'out');
                 tx.rawAmount = tx.amount;
